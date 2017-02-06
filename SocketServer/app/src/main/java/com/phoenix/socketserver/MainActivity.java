@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             try {
 //                InetAddress serverAddress = InetAddress.getByName("127.0.0.1");
-//                DatagramSocket socket = new DatagramSocket(4567, serverAddress);
+//                DatagramSocket socket = new DatagramSocket(4567, serverAddress);//也可以指定绑定在哪个IP
                 DatagramSocket socket = new DatagramSocket(4567);
                 byte[] buffer = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);

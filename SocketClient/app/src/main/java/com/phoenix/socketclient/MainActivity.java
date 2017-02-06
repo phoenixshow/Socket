@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 InetAddress serverAddress = InetAddress.getByName("127.0.0.1");
                 String data = "hello server: " + new Random().nextInt();
                 byte[] buffer = data.getBytes();
+				//参数：1发送的数据，2数据的长度，3服务端IP地址，4服务端监听端口
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length, serverAddress, 4567);
                 socket.send(packet);
                 Log.e("TAG", "client write: " + data);
