@@ -9,6 +9,9 @@ import android.widget.Button;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,6 +20,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn;
+    private Button btn2;
 
     private ConnectedThread connectedThread;
 
@@ -26,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn = (Button) findViewById(R.id.btn);
+        btn2 = (Button) findViewById(R.id.btn2);
         btn.setOnClickListener(new ButtonClickListener());
+        btn2.setOnClickListener(new ButtonClickListener());
     }
 
     class ButtonClickListener implements View.OnClickListener {
@@ -36,8 +42,37 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn:
                     new ServerSocketThread().start();
                     break;
+                case R.id.btn2:
+                    new ServerSocketUDPThread().start();
+                    break;
                 default:
                     break;
+            }
+        }
+    }
+
+    class ServerSocketUDPThread extends Thread {
+        @Override
+        public void run() {
+            try {
+//                InetAddress serverAddress = InetAddress.getByName("127.0.0.1");
+//                DatagramSocket socket = new DatagramSocket(4567, serverAddress);
+                DatagramSocket socket = new DatagramSocket(4567);
+                byte[] buffer = new byte[1024];
+                DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+                Log.e("TAG", "server wait");
+                socket.receive(packet);
+//                String result = new String(packet.getData());
+                String result = new String(packet.getData(), 0, packet.getLength());
+                Log.e("TAG", "server read: "+result);
+
+                String data = "hello client: " + new Random().nextInt();
+                DatagramPacket outPacket = new DatagramPacket(data.getBytes(), data.getBytes().length , packet.getAddress(), packet.getPort());
+                // 发送数据
+                socket.send(outPacket);
+                Log.e("TAG", "server write: " + data);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
