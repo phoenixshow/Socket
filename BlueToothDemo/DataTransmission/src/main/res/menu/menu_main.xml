@@ -1,0 +1,59 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    >
+    <!--
+    showAsAction属性用来定义每个Action是如何显示的
+    always表示永远显示在ActionBar中，如果屏幕空间不够则无法显示，
+    ifRoom表示屏幕空间够的情况下显示在ActionBar中，不够的话就显示在overflow中，
+    never则表示永远显示在overflow中
+    -->
+    <item android:id="@+id/enable_visiblity"
+        android:title="@string/visiblity"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/find_device"
+        android:title="@string/find_device"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/bonded_device"
+        android:title="@string/bonded_device"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/listening"
+        android:title="@string/waiting"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/stop_listening"
+        android:title="@string/stop_waiting"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/disconnect"
+        android:title="@string/disconnect"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/say_hello"
+        android:title="@string/hello"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/say_hi"
+        android:title="@string/hi"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+</menu>

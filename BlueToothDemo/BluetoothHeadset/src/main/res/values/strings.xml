@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BluetoothHeadset</string>
+    <string name="action_settings">Settings</string>
+    <string name="mute">静音</string>
+</resources>
