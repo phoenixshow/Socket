@@ -19,3 +19,9 @@
 3、Module DataTransmission 蓝牙的数据传输<br/>
 4、Module BluetoothHeadset 监听蓝牙耳机连接手机，实现静音<br/>
 <br/>
+##Wifi演示了Wi-fi API的基本功能
+1、启动/关闭网卡，检查网卡状态<br/>
+2、扫描网络<br/>
+3、打开系统设置<br/>
+4、断开指定Wi-fi<br/>
+<br/>

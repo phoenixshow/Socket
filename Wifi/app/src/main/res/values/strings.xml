@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Wifi</string>
+    <string name="start_wifi">启动手机\nwifi网卡</string>
+    <string name="stop_wifi">关闭手机\nwifi网卡</string>
+    <string name="check_wifi">检查当前\nwifi网卡状态</string>
+    <string name="current_state">当前Wifi网卡状态为：%s\n</string>
+    <string name="permisstion_deny">权限被拒绝</string>
+    <string name="scan_network">扫描网络</string>
+    <string name="open_settings">打开设置</string>
+    <string name="connect_info">连接信息</string>
+    <string name="disconnect">断开Wifi</string>
+    <string name="network_state">Wifi连接状态</string>
+</resources>
