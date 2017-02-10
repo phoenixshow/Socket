@@ -25,3 +25,6 @@
 3、打开系统设置<br/>
 4、断开指定Wi-fi<br/>
 <br/>
+##BluetoothChat实现了基于蓝牙聊天的功能
+使用MVC架构<br/>
+<br/>
